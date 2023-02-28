@@ -1,20 +1,18 @@
-import React,{useEffect,useState} from 'react'
-import "./home.css"
-const Home = () => {
-    const [popularMovies, setPopularMovies] = useState([])
- useEffect(() => {
-   fetch("https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US")
- .then(res=>res.json())
- .then(data=>setPopularMovies(data.results))
-   
- }, [])
- 
- 
-    return (
-    <div>
-      hom Page rendrd
-    </div>
-  )
-}
+import React, { useEffect, useState } from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import MovieList from "../../components/movie list/MovieList";
+import "./home.css";
+import CarouselC from "../../components/carousel/CarouselC";
 
-export default Home
+const Home = () => {
+  return (
+    <>
+      <CarouselC />
+      <MovieList />
+    </>
+  );
+};
+{
+  /* <span>{movie.original_title}</span> */
+}
+export default Home;
